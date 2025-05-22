@@ -24,7 +24,7 @@
             <th scope="col">Cliente</th>
             <th scope="col">Dirección</th>
             <th scope="col">Total</th>
-            <th scope="col">Acciones</th>
+            <th scope="col">Estado</th> <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -71,7 +71,7 @@ export default {
     };
   },
   methods: {
-   
+    // Método para obtener todas las órdenes desde la API
     fetchOrderPizzas() {
       this.loading = true;
       this.error = null;
@@ -87,19 +87,19 @@ export default {
           this.loading = false;
         });
     },
-    
+    // Método para navegar a la página de creación de nueva orden
     newOrderPizza() {
       this.$router.push({ name: 'NewOrderPizza' });
     },
- 
+    // Método para navegar a la página de edición de orden
     editOrderPizza(id) {
       this.$router.push({ name: 'EditOrderPizza', params: { id: id } });
     },
-   
+    // Método para navegar a la página de visualización de orden
     showOrderPizza(id) {
       this.$router.push({ name: 'ShowOrderPizza', params: { id: id } });
     },
- 
+    // Método para eliminar una orden de pizza
     deleteOrderPizza(id) {
       Swal.fire({
         title: `¿Deseas eliminar la Orden con ID ${id}?`,
@@ -113,7 +113,7 @@ export default {
             .then(response => {
               if (response.data.success) {
                 Swal.fire('¡Eliminado!', '', 'success');
-                this.fetchOrderPizzas(); 
+                this.fetchOrderPizzas(); // Recargar la lista
               } else {
                 Swal.fire('Error', response.data.message || 'No se pudo eliminar la orden.', 'error');
               }
@@ -128,15 +128,15 @@ export default {
     }
   },
   mounted() {
-    this.fetchOrderPizzas(); 
+    this.fetchOrderPizzas(); // Cargar las órdenes cuando el componente se monta
   }
 };
 </script>
 
 <style scoped>
-
+/* Estilos específicos para este componente */
 .container {
-  max-width: 1000px; 
+  max-width: 1000px; /* Ajustado para más columnas */
   margin: 0 auto;
   padding: 20px;
 }
