@@ -20,6 +20,9 @@
             <router-link to="/extra-ingredients" class="nav-link" active-class="active">Ingredientes Extras</router-link>
           </li>
           <li class="nav-item">
+            <router-link to="/order-pizzas" class="nav-link" active-class="active">Órdenes de Pizza</router-link>
+          </li>
+          <li class="nav-item">
             <router-link to="/about" class="nav-link" active-class="active">About</router-link>
           </li>
         </ul>
@@ -31,7 +34,7 @@
 
 <script>
 export default {
-  name: 'App', // Es una buena práctica nombrar el componente raíz
+  name: 'App',
 };
 </script>
 
@@ -44,43 +47,41 @@ export default {
   color: #2c3e50;
 }
 
-/* Estilos para la barra de navegación de Bootstrap */
+
 .navbar {
-  margin-bottom: 20px; /* Espacio debajo de la barra de navegación */
+  margin-bottom: 20px;
 }
 
 .navbar-brand {
   font-weight: bold;
-  color: #fff !important; /* Asegura que el color del texto de la marca sea blanco */
+  color: #fff !important;
 }
 
 .nav-link {
-  color: rgba(255, 255, 255, 0.75) !important; /* Color de texto para enlaces normales */
+  color: rgba(255, 255, 255, 0.75) !important;
   transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-  color: rgba(255, 255, 255, 1) !important; /* Color de texto al pasar el mouse */
+  color: rgba(255, 255, 255, 1) !important;
 }
 
 .nav-link.active {
-  color: #42b983 !important; /* Color para el enlace activo */
+  color: #42b983 !important;
   font-weight: bold;
 }
 
-/* Estilos generales para el resto de la aplicación */
+
 nav {
-  padding: 0; /* Ya manejado por la barra de navegación de Bootstrap */
+  padding: 0;
 }
 
 nav a {
-  font-weight: normal; /* Restablecer el peso de la fuente, ya que Bootstrap lo maneja */
-  color: inherit; /* Heredar color, ya que Bootstrap lo maneja */
+  font-weight: normal;
+  color: inherit;
 }
 
-/* Puedes mantener o ajustar estos si son necesarios para otros elementos */
 nav a.router-link-exact-active {
-  /* Este estilo se superpone con .nav-link.active de Bootstrap,
-     puedes ajustarlo si necesitas un color diferente para la ruta exacta */
+ 
 }
 </style>

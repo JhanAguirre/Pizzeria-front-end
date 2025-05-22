@@ -2,8 +2,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-// Iconos necesarios para el proyecto Pizzería (Pizzas, Sucursales, Ingredientes Extras)
-import { faPlus, faEdit, faTrash, faPizzaSlice, faDollarSign, faInfoCircle, faHome, faUser, faStore, faMapMarkerAlt, faEye, faLeaf, faTag } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faEdit, faTrash, faPizzaSlice, faDollarSign, faInfoCircle, faHome, faUser, faStore, faMapMarkerAlt, faEye, faLeaf, faTag, faShoppingCart, faClipboardList } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import Swal from 'sweetalert2';
@@ -14,8 +13,8 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 
-// Añade todos los iconos a la librería de FontAwesome
-library.add(faPlus, faEdit, faTrash, faPizzaSlice, faDollarSign, faInfoCircle, faHome, faUser, faStore, faMapMarkerAlt, faEye, faLeaf, faTag);
+
+library.add(faPlus, faEdit, faTrash, faPizzaSlice, faDollarSign, faInfoCircle, faHome, faUser, faStore, faMapMarkerAlt, faEye, faLeaf, faTag, faShoppingCart, faClipboardList);
 
 const app = createApp(App);
 

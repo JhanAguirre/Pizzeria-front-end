@@ -4,7 +4,8 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import Pizzas from '../views/Pizzas.vue'; // Componente principal para listar pizzas
 import Branches from '../views/Branches.vue'; // Componente principal para listar sucursales
-import ExtraIngredients from '../views/ExtraIngredients.vue'; // ¡NUEVO! Componente principal para listar ingredientes extras
+import ExtraIngredients from '../views/ExtraIngredients.vue'; // Componente principal para listar ingredientes extras
+import OrderPizzas from '../views/OrderPizzas.vue'; // ¡NUEVO! Componente principal para listar órdenes de pizza
 
 // Importa los componentes de CRUD para Pizzas
 import NewPizza from '../components/pizzas/Newpizza.vue';
@@ -13,10 +14,15 @@ import EditPizza from '../components/pizzas/Editpizza.vue';
 // Importa los componentes de CRUD para Sucursales (solo Show)
 import ShowBranch from '../components/branches/ShowBranch.vue';
 
-// ¡NUEVO! Importa los componentes de CRUD para Ingredientes Extras
+// Importa los componentes de CRUD para Ingredientes Extras
 import NewExtraIngredient from '../components/extra_ingredients/NewExtraIngredient.vue';
 import EditExtraIngredient from '../components/extra_ingredients/EditExtraIngredient.vue';
 import ShowExtraIngredient from '../components/extra_ingredients/ShowExtraIngredient.vue';
+
+// ¡NUEVO! Importa los componentes de CRUD para Órdenes de Pizza
+import NewOrderPizza from '../components/order_pizzas/NewOrderPizza.vue';
+import EditOrderPizza from '../components/order_pizzas/EditOrderPizza.vue';
+import ShowOrderPizza from '../components/order_pizzas/ShowOrderPizza.vue';
 
 const routes = [
   {
@@ -35,7 +41,7 @@ const routes = [
     component: NewPizza
   },
   {
-    path: '/edit-pizza/:id', // Ruta para editar pizza, con un parámetro dinámico 'id'
+    path: '/edit-pizza/:id',
     name: 'EditPizza',
     component: EditPizza
   },
@@ -45,11 +51,10 @@ const routes = [
     component: Branches
   },
   {
-    path: '/show-branch/:id', // Ruta para ver los detalles de una sucursal
+    path: '/show-branch/:id',
     name: 'ShowBranch',
     component: ShowBranch
   },
-  // ¡NUEVO! Rutas para Ingredientes Extras
   {
     path: '/extra-ingredients',
     name: 'ExtraIngredients',
@@ -69,6 +74,27 @@ const routes = [
     path: '/show-extra-ingredient/:id',
     name: 'ShowExtraIngredient',
     component: ShowExtraIngredient
+  },
+  // ¡NUEVO! Rutas para Órdenes de Pizza
+  {
+    path: '/order-pizzas',
+    name: 'OrderPizzas',
+    component: OrderPizzas
+  },
+  {
+    path: '/add-order-pizza',
+    name: 'NewOrderPizza',
+    component: NewOrderPizza
+  },
+  {
+    path: '/edit-order-pizza/:id',
+    name: 'EditOrderPizza',
+    component: EditOrderPizza
+  },
+  {
+    path: '/show-order-pizza/:id',
+    name: 'ShowOrderPizza',
+    component: ShowOrderPizza
   },
   {
     path: '/about',
